@@ -1,0 +1,27 @@
+<h1>El juego del ahorcado</h1>
+<h3>Intentos restantes: {{cont}}</h3>
+<div class="incorrect-words">
+	<div class="incorrect-img"></div>
+	<div class="incorrect-letters">
+		<p *ngFor="let incorrect of incorrects">
+			{{incorrect}}
+		</p>
+	</div>
+</div>
+
+<div class="clue-cont">
+	<h5>Pista</h5>
+	<p>{{ clue }}</p>
+</div>
+
+<input type="text" maxlength="1" [(ngModel)]="letra" name="letter" />
+
+<div class="result-word-cont">
+	<span class="letter" *ngFor="let letter of letters; index as i">
+		<ng-container>
+			{{ letter }}
+		</ng-container>
+	</span>
+</div>
+
+<button (click)="checkWord()">probar</button>
